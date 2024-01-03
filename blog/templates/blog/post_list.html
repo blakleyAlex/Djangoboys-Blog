@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            Coinbit.com
-        </title>
+        <title>Django Dudes blog</title>
     </head>
     <body>
-        <h1>Hi, Mr. Dad!</h1>
-        <h2>Thank you for requesting government monitoring services.</h2>
-        <h3>Your geolocation is now being tracked.</h3>
-        <h4>Click <a href="https://chain.link/">here</a> to purchase Coinbit.</h4>
+        <header>
+            <h1><a href="/">Django Dudes Blog</a></h1>
+        </header>
+
+        {% for post in posts %}
+            <article>
+                    <time>published: {{ post.published_date }}</time>
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+            {{ post }}
+        {% endfor %}
+
     </body>
 </html>
